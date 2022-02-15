@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 const port = process.env.port||3000;
+const host = '0.0.0.0';
 var middleware = require("./middleware");
 /*var middleware ={
     requireAuthentication: function(req,res,next){
@@ -20,5 +21,5 @@ app.get("/about",middleware.requireAuthentication,function(req,res){
 res.send("About Express");
 });
 app.use(express.static(__dirname+"/public"));
-app.listen(port);
-console.log(port);
+app.listen(port,host);
+//console.log(port);
